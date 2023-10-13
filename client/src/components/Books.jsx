@@ -37,7 +37,7 @@ export default function Books() {
     <div className="container">
       <div className="row">
         <div className="col pt-5">
-          <PageTitle text="Book Journal App" />
+          <PageTitle text="Add a Book" />
           <AddBookForm onSubmit={addBook} />
         </div>
       </div>

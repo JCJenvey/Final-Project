@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './AddBookForm.css';
 
 export default function AddBookForm({ onSubmit }) {
@@ -6,6 +7,7 @@ export default function AddBookForm({ onSubmit }) {
   const [author, setAuthor] = useState('');
   const [summary, setSummary] = useState('');
   const [enjoyed, setEnjoyed] = useState(false);
+  const navigate = useNavigate();
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -20,6 +22,7 @@ export default function AddBookForm({ onSubmit }) {
     setAuthor('');
     setSummary('');
     setEnjoyed(false);
+    navigate('/');
   }
 
   return (
@@ -70,7 +73,7 @@ export default function AddBookForm({ onSubmit }) {
         />
       </div>
 
-      <div className="input-group-append">
+      <div className="input-group-append pad">
         <button type="submit" className="btn btn-primary">
           Add Book
         </button>
